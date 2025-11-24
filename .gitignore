@@ -1,0 +1,45 @@
+#ASP.NET Core
+bin/
+obj/
+*.db
+*.db-shm
+*.db-wal
+*.log
+*.cache
+
+#Visual Studio and VS Code
+.vscode/
+.vs/
+*.user
+*.suo
+
+#Publish output
+/wwwroot/dist/
+/wwwroot/lib/
+/publish/
+/dist/
+
+#Node
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+#Angular CLI
+.angular
+.angular/cache
+.angular/compiler
+.angular/server
+
+#Environment files
+*.env
+.env..local
+
+#Tools
+_ReSharper*/
+.idea/
+
+#OS
+Thumbs.db
+.DS_Store
+Desktop.ini
