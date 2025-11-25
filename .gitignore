@@ -43,3 +43,8 @@ _ReSharper*/
 Thumbs.db
 .DS_Store
 Desktop.ini
+
+#Vim temp swap files
+*.swp
+API/appsettings.json
+API/dating.db*
