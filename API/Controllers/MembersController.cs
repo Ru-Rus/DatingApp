@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using API.Data;
 using API.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
@@ -14,18 +15,18 @@ namespace API.Controllers
     public class MembersController(AppDBContext context) : ControllerBase
     {
         [HttpGet]
-        public ActionResult<IReadOnlyList<AppUsers>> GetMembers()
+        public async Task<ActionResult<IReadOnlyList<AppUsers>>> GetMembers()
         {
-            var members = context.Users.ToList();
+            var members = await context.Users.ToListAsync();
             return members;
         }
 
         [HttpGet("{id}")]
-        public ActionResult<AppUsers> GetMembers(string? id)
+        public async Task<ActionResult<AppUsers>> GetMembers(string? id)
         {
-            var member = context.Users.Find(id);
+            var member = await context.Users.FindAsync(id);
 
-            if(member == null)
+            if (member == null)
             {
                 return NotFound();
             }
